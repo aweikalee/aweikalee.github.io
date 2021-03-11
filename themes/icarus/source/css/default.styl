@@ -1,0 +1,35 @@
+$primary ?= #7dc
+$primary-lgiht ?= #a9f5e8
+
+$link ?= $primary
+$link-hover ?= $primary
+
+$title-weight ?= $weight-bold
+$content-heading-weight ?= $weight-bold
+
+$menu-item-active-color ?= $text
+$menu-item-active-background-color ?= #e3f6f1
+
+
+@import 'style'
+
+
+.article
+    .title
+        &::before
+            content: '# '
+            font-weight: normal
+            color: #ccc
+.level-item
+    .title
+        font-weight: normal
+
+.button
+    &.is-primary
+        color: $primary-invert
+        background-color: $primary-lgiht
+
+.widget
+    .tags
+        .tag:first-child
+            background: $primary-lgiht
