@@ -33,6 +33,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           source: "public/*"
-          target: "~/dist"
+          target: "~/blog"
           strip_components: 1
           rm: true
