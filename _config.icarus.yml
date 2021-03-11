@@ -151,13 +151,13 @@ search:
     type: insight
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
-comment:
-    type: gitalk
-    owner: aweikalee         # (required) GitHub user name
-    repo: aweikalee.github.io          # (required) GitHub repository name
-    client_id: ec890d936f354d6fb4fe     # (required) OAuth application client id
-    client_secret: 7ffa555ebfa7a275ef0132358d88161cacd55bf6 # (required) OAuth application client secret
-    admin: aweikalee         # (required) GitHub repo owner and collaborators who can initialize github issues
+# comment:
+#     type: gitalk
+#     owner: aweikalee         # (required) GitHub user name
+#     repo: aweikalee.github.io          # (required) GitHub repository name
+#     client_id: ec890d936f354d6fb4fe     # (required) OAuth application client id
+#     client_secret: 7ffa555ebfa7a275ef0132358d88161cacd55bf6 # (required) OAuth application client secret
+#     admin: aweikalee         # (required) GitHub repo owner and collaborators who can initialize github issues
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
 # donates:
