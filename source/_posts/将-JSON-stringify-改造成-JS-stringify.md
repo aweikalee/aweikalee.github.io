@@ -19,7 +19,7 @@ tags:
 默认情况下 `JSON.stringify` 会：
 
 - 忽略 `undefined`, `Function`, `Symbol`。
-- 将 `NaN` 转换成 `null`
+- 将 `NaN`, `Infinity`, `-Infinity` 转换成 `null`
 - 遇到`BigInt` 会抛出错误。
 
 
@@ -30,6 +30,8 @@ tags:
 - `Function`: `<Function>`
 - `Symbol(123)`: `Symbol(123)`
 - `NaN`: `NaN`
+- `Infinity`: `Infinity`
+- `-Infinity`: `-Infinity`
 - `BigInt(123)`: `123n`
 
 
@@ -42,6 +44,8 @@ const obj = {
   Function: () => {},
   Symbol: Symbol(123),
   NaN: NaN,
+  Infinity: Infinity,
+  '-Infinity': -Infinity,
   BigInt: 123n,
 }
 ```
@@ -101,7 +105,10 @@ function jsReplacer(key, value) {
     case 'function':
       return '<Function>'
     case 'number':
-      return Number.isNaN(value) ? 'NaN' : value
+      if (Number.isNaN(value)) return 'NaN'
+      if (value === Infinity) return 'Infinity'
+      if (value === -Infinity) return '-Infinity'
+      return value
     case 'symbol':
       return value.toString()
     case 'bigint':
@@ -125,6 +132,8 @@ function jsReplacer(key, value) {
   "Function": "<Function>",
   "Symbol": "Symbol(123)",
   "NaN": "NaN",
+  "Infinity": "Infinity",
+  "-Infinity": "-Infinity",
   "BigInt": "123n"
 }
 ```
@@ -167,7 +176,10 @@ function jsReplacer(key, value) {
     case 'function':
       return mark('<Function>')
     case 'number':
-      return Number.isNaN(value) ? mark('NaN') : value
+      if (Number.isNaN(value)) return mark('NaN')
+      if (value === Infinity) return mark('Infinity')
+      if (value === -Infinity) return mark('-Infinity')
+      return value
     case 'symbol':
       return mark(value.toString())
     case 'bigint':
@@ -227,7 +239,10 @@ function jsReplacer(key, value) {
     case 'function':
       return mark('<Function>')
     case 'number':
-      return Number.isNaN(value) ? mark('NaN') : value
+      if (Number.isNaN(value)) return mark('NaN')
+      if (value === Infinity) return mark('Infinity')
+      if (value === -Infinity) return mark('-Infinity')
+      return value
     case 'symbol':
       return mark(value.toString())
     case 'bigint':
@@ -261,6 +276,8 @@ function jsStringify(value, replacer, space) {
   "Function": <Function>,
   "Symbol": Symbol(123),
   "NaN": NaN,
+  "Infinity": Infinity,
+  "-Infinity": -Infinity,
   "BigInt": 123n
 }
 ```
@@ -547,7 +564,10 @@ function jsReplacer(key, value) {
     case 'function':
       return mark('<Function>')
     case 'number':
-      return Number.isNaN(value) ? mark('NaN') : value
+      if (Number.isNaN(value)) return mark('NaN')
+      if (value === Infinity) return mark('Infinity')
+      if (value === -Infinity) return mark('-Infinity')
+      return value
     case 'symbol':
       return mark(value.toString())
     case 'bigint':
