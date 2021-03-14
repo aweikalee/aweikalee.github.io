@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
+    "build": "hexo generate && gulp",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server"
@@ -12,8 +12,15 @@
     "version": "5.4.0"
   },
   "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "bulma-stylus": "^0.8.0",
     "cheerio": "^1.0.0-rc.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.2",
     "hexo": "^5.0.0",
     "hexo-component-inferno": "^0.10.5",
     "hexo-generator-archive": "^1.0.0",
