@@ -1,12 +1,1 @@
-(function() {
-    function $() {
-        return Array.prototype.slice.call(document.querySelectorAll.apply(document, arguments));
-    }
-
-    // copy widgets in the right column, when exist, to the bottom of the left column
-    if ($('.columns .column-right').length && $('.columns .column-right-shadow').length && !$('.columns .column-right-shadow')[0].children.length) {
-        for (const child of $('.columns .column-right')[0].children) {
-            $('.columns .column-right-shadow')[0].append(child.cloneNode(true));
-        }
-    }
-}());
+"use strict";function _createForOfIteratorHelper(r,t){var e;if("undefined"==typeof Symbol||null==r[Symbol.iterator]){if(Array.isArray(r)||(e=_unsupportedIterableToArray(r))||t&&r&&"number"==typeof r.length){e&&(r=e);var n=0,o=function(){};return{s:o,n:function(){return n>=r.length?{done:!0}:{done:!1,value:r[n++]}},e:function(r){throw r},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var a,l=!0,u=!1;return{s:function(){e=r[Symbol.iterator]()},n:function(){var r=e.next();return l=r.done,r},e:function(r){u=!0,a=r},f:function(){try{l||null==e.return||e.return()}finally{if(u)throw a}}}}function _unsupportedIterableToArray(r,t){if(r){if("string"==typeof r)return _arrayLikeToArray(r,t);var e=Object.prototype.toString.call(r).slice(8,-1);return"Object"===e&&r.constructor&&(e=r.constructor.name),"Map"===e||"Set"===e?Array.from(r):"Arguments"===e||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(e)?_arrayLikeToArray(r,t):void 0}}function _arrayLikeToArray(r,t){(null==t||t>r.length)&&(t=r.length);for(var e=0,n=new Array(t);e<t;e++)n[e]=r[e];return n}!function(){function r(){return Array.prototype.slice.call(document.querySelectorAll.apply(document,arguments))}if(r(".columns .column-right").length&&r(".columns .column-right-shadow").length&&!r(".columns .column-right-shadow")[0].children.length){var t,e=_createForOfIteratorHelper(r(".columns .column-right")[0].children);try{for(e.s();!(t=e.n()).done;){var n=t.value;r(".columns .column-right-shadow")[0].append(n.cloneNode(!0))}}catch(r){e.e(r)}finally{e.f()}}}();
