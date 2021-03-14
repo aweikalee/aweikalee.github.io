@@ -11,7 +11,7 @@ tags:
 
 `JSON.stringify` 用来将 JS 变量序列化成 `JSON` 字符串。一般情况下普通使用是没什么问题了，但需求一旦超过了 `JSON` 的标准就会存在问题了。比如上篇文章中涉及到的，需要序列化**任意 JS 变量**用于展示。
 
-下面将会解决 `undefined`, `Function`, `NaN`, `Symbol`, `BigInt` 的序列化，以及对于循环引用的对象的处理。一步一步将 `JSON.stringify` 改造成 `JS.stringify`。**推荐直接拉到底部看完整代码**，看不懂再回头看思路、说明。
+下面将会解决 `undefined`, `Function`, `NaN`, `Infinity`, `Symbol`, `BigInt` 的序列化，以及对于循环引用的对象的处理。一步一步将 `JSON.stringify` 改造成 `JS.stringify`。**推荐直接拉到底部看完整代码**，看不懂再回头看思路、说明。
 
 <!-- more -->
 
