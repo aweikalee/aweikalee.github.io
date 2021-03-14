@@ -10,9 +10,41 @@ $content-heading-weight ?= $weight-bold
 $menu-item-active-color ?= $text
 $menu-item-active-background-color ?= #e3f6f1
 
+$navbar-background-color ?= transparent
+$navbar-item-color ?= #999
+$navbar-item-hover-background-color ?= transparent
+
+$modal-background-background-color ?= rgba(0, 0, 0, 0.5)
+
 
 @import 'style'
 
+
+body
+    &::before
+        content: ''
+        display: block
+        height: 50vh
+        width 100%;
+        position: fixed
+        z-index: -1
+
+        background-color: #000
+        background-image:
+            linear-gradient(rgba($body-background-color, 0) 0%, rgba($body-background-color, 0) 30%, $body-background-color 100%),
+            url(../img/DSC09127.jpg)
+        background-position: top center
+        background-size: contain
+        background-repeat: no-repeat
+
++tablet()
+    .column-main, .column-left, .column-right, .column-right-shadow
+        &.is-sticky
+            top: 3.25rem + 2rem
+
+    #toc
+        max-height: 'calc(100vh - %s)' % (2rem * 2 + 3.25rem)
+        overflow-y: auto
 
 .article
     .title
@@ -33,3 +65,32 @@ $menu-item-active-background-color ?= #e3f6f1
     .tags
         .tag:first-child
             background: $primary-lgiht
+
+.navbar-main
+    position: sticky
+    top: 0
+    box-shadow: none
+
+    &.is-shadow
+        box-shadow: $shadow
+
+    +until($navbar-breakpoint)
+        .navbar-menu
+            justify-content: flex-end
+            box-shadow: none
+
+        .navbar-start
+            margin-right: 0
+
+        .navbar-end
+            margin-left: 0
+
+    +mobile()
+        .container
+            display: flex
+    +tablet()
+        .container
+            display: flex
+
+.section
+    padding-top: 30vh
