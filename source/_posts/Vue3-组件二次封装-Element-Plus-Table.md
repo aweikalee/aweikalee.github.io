@@ -247,7 +247,7 @@ defineExpose({
 
 接下来就是追加各种功能。
 
-### my-toobar 组件的实现
+### MyToolbar 组件的实现
 *MyTable* 对外提供了 `columns` 与 `updateColumns`，通过它们我们可以根据需求实现一个自定义列的显示、固定和排序。由于这边怎么实现都行，就不细说了。[aweikalee/element-plus-table-proxy-demo](https://github.com/aweikalee/element-plus-table-proxy-demo) 中有简单的实现可以参考。
 
 ### 列数据持久化储存
