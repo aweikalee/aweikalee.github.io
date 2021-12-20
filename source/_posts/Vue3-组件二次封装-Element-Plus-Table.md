@@ -116,7 +116,7 @@ const slots = computed(() => {
 })
 
 /* 用于判断 vnode 是否是 el-table-column 组件 */
-function isElTableColumn(vnode: VNode) {
+function isElTableColumn(vnode) {
   return (vnode.type as Component)?.name === 'ElTableColumn'
 }
 
@@ -162,7 +162,7 @@ const columns = reactive({
     const slot = [...columns.slot]
     const storage = [...columns.storage]
 
-    const res: IMyTableColumnProps[] = []
+    const res = []
     storage.forEach((props) => {
       const index = slot.findIndex(({ prop }) => prop === props.prop)
       if (~index) {
@@ -190,7 +190,7 @@ const columns = reactive({
 const refactorSlot = computed(() => {
   const { main } = slots.value
 
-  const refactorySlot: VNode[] = []
+  const refactorySlot = []
 
   columns.render.forEach(({ prop, visiable, fixed }) => {
     // 设置为不可见的 则跳过（即不渲染）
