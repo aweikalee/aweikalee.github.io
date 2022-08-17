@@ -218,10 +218,25 @@ const refactorSlot = computed(() => {
 const children = () => [slots.value.left, refactorSlot.value, slots.value.other]
 ```
 
+### 更新列数据
+*el-table-column* 是通过 `onMounted` 与 `onUnmounted` 两个生命周期将列数据同步给 *el-table* 的。但 `Vue` 会尽可能利用旧的实例，只会更新实例上的数据，而不是销毁重新创建。这就导致 `onMounted` 与 `onUmmounted` 无法运行，从而会产生 *el-table* 中的列数据与 *el-table-column* 不一致。
+
+故此处通过更新 `key` 来强制重新创建 *el-table-column*。
+```html
+<el-table>
+  <children :key="key" />
+</el-table>
+```
+
+```js
+const key = ref(0)
+watch(refactorSlot, () => (key.value += 1))
+```
+
 ### 暴露接口
 ```html
 <el-table ref="table">
-  <children />
+  <children :key="key" />
 </el-table>
 ```
 ```js
