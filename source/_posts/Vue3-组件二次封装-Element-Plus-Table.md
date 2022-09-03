@@ -17,7 +17,7 @@ Demo：[element-plus-table-proxy-demo](https://aweikalee.github.io/element-plus-
 
 <!-- more -->
 
-> 虽然公司里用的是 `Vue 2` + `Element UI`，但是下面我会用 `Vue 3` + `Element Plus` 来实现。思路是差不多的，只是坑稍有点不太一样。*
+>  `Vue 2` + `Element UI` 请前往 [《Vue2 组件二次封装 Element UI El-Table》](/2022/09/03/Vue2-组件二次封装-Element-UI-Table/)
 
 ## 主要思路
 对于 *el-table* 的二次封装，我希望是：
