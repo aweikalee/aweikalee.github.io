@@ -38,6 +38,15 @@ module.exports = class extends Component {
             <Plugins site={site} config={config} page={page} helper={helper} head={false} />
             <script src={url_for('/js/main.js')} defer></script>
             <script src={url_for('/js/navbar.js')}></script>
+            <script src={cdn('mermaid', '8.9.3', 'dist/mermaid.min.js')}></script>
+            <script dangerouslySetInnerHTML={{
+                __html: `
+                    if (window.mermaid) {
+                        mermaid.initialize();
+                    }
+                `
+            }}></script>
+            <style dangerouslySetInnerHTML={{ __html: ` .mermaid > svg { height: auto; } ` }}></style>
         </Fragment>;
     }
 };
