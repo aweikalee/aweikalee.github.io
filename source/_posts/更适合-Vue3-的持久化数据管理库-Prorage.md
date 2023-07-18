@@ -14,10 +14,13 @@ tags:
 
 <!-- more -->
 
+
 ## Prorage 简介
+项目地址：[aweikalee/prorage](https://github.com/aweikalee/prorage)
+
 `Prorage` = `Proxy` + `Storage`。
 
-让 `localStorage` 操作起来和对象一样自然。
+让 `localStorage` 使用起来像对象一样自然。
 
 基于 `@vue/reactivity` 实现的持久化数据管理，与 `reactive` 有着几乎相同的使用方式。与 `@vue/reactivity` 一样可以脱离 **Vue** 单独使用。
 
